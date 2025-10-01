@@ -1,19 +1,23 @@
-import './App.css'
-import HeroImg from './components/HeroImg'
+import Home from './components/Home/Home'
 import Header from './components/Header'
-import ProductCard from './components/ProductCard'
-import CategoryContainer from './components/CategoryContainer'
 import Footer from './components/Footer/Footer'
+import Products from './components/Products/Products'
+import { Route, Routes } from 'react-router-dom'
+import './App.css'
 
 function App() {
   return (
     <>
-    <Header/>
-    <HeroImg/>
-    <CategoryContainer/>
-    <ProductCard title='Get the new RTX 50 Series' category={1}/>
-    <ProductCard title='The best of Intel' category={2}/>
-    <Footer/>
+      <Header />
+
+    
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/products' element={<Products />} />
+      </Routes>
+      
+
+      <Footer />
     </>
   )
 }
