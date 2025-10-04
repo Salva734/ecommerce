@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
+import { GiHamburgerMenu } from "react-icons/gi";
 
 function Header() {
   const location = useLocation()
@@ -48,6 +49,7 @@ function Header() {
           Alfredo
         </a>
       </nav>
+      <GiHamburgerMenu className='md:hidden' size={32}/>
     </header>
   )
 }

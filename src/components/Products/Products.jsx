@@ -4,7 +4,8 @@ import { FaFilter } from "react-icons/fa6";
 import { useState } from 'react'
 
 function Products() {
-  const [selectedCategory, setSelectedCategory] = useState(null)
+  const [selectedCategory, setSelectedCategory] = useState([])
+  
 
   return (
     <div className='bg-black min-h-screen -mt-16 text-white'>
@@ -13,7 +14,7 @@ function Products() {
 
         <div className='flex w-1/7 items-center gap-4 bg-[#111111]  m-4 flex-col'>
           <div className='flex p-4 justify-between w-full text-2xl font-bold'><h3>Filters</h3><FaFilter /></div>
-          <CategoryMap setSelectedCategory={setSelectedCategory}/>
+          <CategoryMap setSelectedCategory={setSelectedCategory} selectedCategory={selectedCategory}/>
 
         </div>
 
