@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 import { TbShoppingCartPlus } from 'react-icons/tb'
 import { useNavigate } from 'react-router-dom'
 
-function CardMap({ category, limit }) {
+
+function CardMap({ category, limit, brand }) {
   const [products, setProducts] = useState([])
   const Navigate = useNavigate()
 
@@ -10,10 +11,11 @@ function CardMap({ category, limit }) {
     let url = `http://localhost:3000/?`
     if (category) url += `category=${category}&`
     if (limit) url += `limit=${limit}&`
+    if (brand) url += `brand=${brand}&`
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProducts(data))
-  }, [category, limit])
+  }, [category, limit, brand])
 
   return (
     <>
@@ -21,15 +23,15 @@ function CardMap({ category, limit }) {
         <div
           key={product.id}
           className='w-3xs min-w-3xs bg-[#222222] flex flex-col items-center'
-          onClick={
-            () => {Navigate(`/products/${product.id}`)}
-          }
         >
           <div className='w-full h-full mb-3 flex items-center justify-center bg-[#111111] cursor-pointer'>
             <img
               className='w-full h-full object-cover p-2'
               src={product.img}
               alt={product.name}
+              onClick={() => {
+                Navigate(`/products/${product.id}`)
+              }}
             />
           </div>
           <h4 className='text-lg font-semibold mb-1 text-center'>

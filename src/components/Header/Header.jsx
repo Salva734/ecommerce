@@ -1,5 +1,7 @@
 import { Link, useLocation } from 'react-router-dom'
 import { GiHamburgerMenu } from "react-icons/gi";
+import { IoPersonCircleSharp } from "react-icons/io5";
+import { TbShoppingCart } from "react-icons/tb";
 
 function Header() {
   const location = useLocation()
@@ -36,7 +38,7 @@ function Header() {
           }`}
           href='#'
         >
-          Echito
+          Offers
         </a>
         <a
           className={`h-full w-24 flex items-center justify-center px-4 bg-linear-to-b from-transparent from-55% ${
@@ -46,9 +48,13 @@ function Header() {
           }`}
           href='#'
         >
-          Alfredo
+          Contact
         </a>
       </nav>
+      <div className='flex gap-2'>
+        <TbShoppingCart size={32} className='cursor-pointer'/>
+        <IoPersonCircleSharp size={32} className='cursor-pointer'/>
+      </div>
       <GiHamburgerMenu className='md:hidden' size={32}/>
     </header>
   )

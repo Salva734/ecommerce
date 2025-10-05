@@ -1,6 +1,6 @@
 import CardMap from './CardMap'
 
-function ProductCard({title, category, limit}) {
+function ProductCard({title, category, limit, brand}) {
   return (
     <div className='bg-black text-white flex flex-col py-6'>
       <div className='flex justify-center'>
@@ -9,7 +9,7 @@ function ProductCard({title, category, limit}) {
         </h1>
       </div>
   <div className='flex gap-6 md:justify-center bg-black flex-nowrap overflow-x-auto px-6 md:px-0 scrollbar-hide'>
-    <CardMap category={category} limit={limit}/>
+    <CardMap category={category} limit={limit} brand={brand}/>
   </div>
       
     </div>

@@ -1,5 +1,5 @@
 import HeroImg from './HeroImg'
-import ProductCard from './ProductCard'
+import ProductCard from '../Shared/ProductCard'
 import CategoryContainer from './CategoryContainer'
 
 function Home() {

@@ -1,4 +1,4 @@
-import CardMap from '../Home/CardMap'
+import CardMap from '../Shared/CardMap'
 import CategoryMap from './CategoryMap'
 import { FaFilter } from "react-icons/fa6";
 import { useState } from 'react'
