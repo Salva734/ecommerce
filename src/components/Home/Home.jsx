@@ -7,8 +7,8 @@ function Home() {
     <>
       <HeroImg />
       <CategoryContainer />
-      <ProductCard title='Get the new RTX 50 Series' category={[1,2]} limit={5} />
-      <ProductCard title='The best of Intel' category={2} limit={5}/>
+      <ProductCard title='Get the new RTX 50 Series' category={2} limit={5} />
+      <ProductCard title='The best of Intel' category={1} limit={5}/>
     </>
   )
 }

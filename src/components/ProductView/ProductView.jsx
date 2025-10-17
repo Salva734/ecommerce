@@ -36,7 +36,7 @@ function ProductView() {
                   {product.stock === 0
                     ? `Out of stock`
                     : product.stock > 10
-                    ? `Available`
+                    ? `On stock`
                     : `Only ${product.stock} left`}
                 </span>
               </li>

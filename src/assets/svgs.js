@@ -11,34 +11,42 @@ const icons = [
   {
     name: "CPU's",
     icon: PiCpuBold,
+    categoryId: '1'
   },
   {
     name: "GPU's",
     icon: BsGpuCard,
+    categoryId: '2'
   },
   {
     name: "RAM's",
-    icon: PiMemoryFill
+    icon: PiMemoryFill,
+    categoryId: '3'
   },
   {
     name: "SSD's",
-    icon: FaHdd
+    icon: FaHdd,
+    categoryId: '4'
   },
   {
     name: "Cases",
-    icon: SiPcgamingwiki
+    icon: SiPcgamingwiki,
+    categoryId: '5'
   },
   {
     name: "PSU's",
-    icon: ImPowerCord
+    icon: ImPowerCord,
+    categoryId: '6'
   },
   {
     name: "Motherboards",
-    icon: BsFillMotherboardFill
+    icon: BsFillMotherboardFill,
+    categoryId: '7'
   },
   {
     name: 'Peripherals',
-    icon: GiKeyboard
+    icon: GiKeyboard,
+    categoryId: '8'
   }
 ]
 

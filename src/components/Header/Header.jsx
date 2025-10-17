@@ -52,7 +52,7 @@ function Header() {
         </a>
       </nav>
       <div className='flex gap-2'>
-        <TbShoppingCart size={32} className='cursor-pointer'/>
+        <Link to='/cart'><TbShoppingCart size={32} className='cursor-pointer'/></Link>
         <IoPersonCircleSharp size={32} className='cursor-pointer'/>
       </div>
       <GiHamburgerMenu className='md:hidden' size={32}/>
