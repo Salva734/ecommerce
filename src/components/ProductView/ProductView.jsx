@@ -1,12 +1,14 @@
 import { useParams } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { FaStar } from 'react-icons/fa'
 import Button from '../Shared/Button'
 import ProductCard from '../Shared/ProductCard'
+import CartContext from '../../contexts/CartContext'
 
 function ProductView() {
   const { id } = useParams()
   const [product, setProduct] = useState([])
+  const {setCartItems} = useContext(CartContext)
 
   useEffect(() => {
     fetch(`http://localhost:3000/${id}`)
@@ -50,7 +52,7 @@ function ProductView() {
           {/*Bottom section */}
           <div className='flex flex-col items-center gap-4 pb-14'>
             <h3 className='text-3xl'>${product.price}</h3>
-            <Button title='Add to cart' w='w-full' />
+            <Button title='Add to cart' w='w-full' handler={()=> setCartItems(product.id)}/>
           </div>
         </div>
       </div>
