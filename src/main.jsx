@@ -5,6 +5,7 @@ import App from './App.jsx'
 import ScrollToTop from './components/Shared/ScrollToTop.jsx'
 import {FiltersContextProvider} from './contexts/FiltersContext.jsx'
 import {CartContextProvider} from './contexts/CartContext.jsx'
+import './Index.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

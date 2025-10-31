@@ -5,7 +5,7 @@ import Products from './components/Products/Products'
 import ProductView from './components/ProductView/ProductView'
 import Cart from './components/Cart/Cart'
 import { Route, Routes } from 'react-router-dom'
-import './App.css'
+
 
 function App() {
   return (

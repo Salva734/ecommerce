@@ -4,6 +4,7 @@ import { FaStar } from 'react-icons/fa'
 import Button from '../Shared/Button'
 import ProductCard from '../Shared/ProductCard'
 import CartContext from '../../contexts/CartContext'
+import PriceCalculator from '../Shared/PriceCalculator'
 
 function ProductView() {
   const { id } = useParams()
@@ -25,9 +26,8 @@ function ProductView() {
           <div className='flex flex-col gap-2'>
             <h1 className='text-6xl'>{product.name}</h1>
             <ul className='flex gap-4'>
-              <li>Brand: {product.brand}</li>
               <li>
-                Available:{' '}
+                Availability:{' '}
                 <span
                   className={`${
                     product.stock > 10
@@ -49,13 +49,15 @@ function ProductView() {
             </ul>
             <span>{product.description}</span>
           </div>
+
           {/*Bottom section */}
           <div className='flex flex-col items-center gap-4 pb-14'>
-            <h3 className='text-3xl'>${product.price}</h3>
+            <PriceCalculator price={product.price} discount={product.discount} text='text-3xl'/>
             <Button title='Add to cart' w='w-full' handler={()=> setCartItems(product.id)}/>
           </div>
         </div>
       </div>
+
       {/*Related products */}
       <ProductCard title='Related products' limit={5} category={product.category} brand={product.brand}/>
     </>

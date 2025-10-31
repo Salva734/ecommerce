@@ -3,7 +3,7 @@ import { createContext, useState, useEffect, useMemo } from 'react'
 const CartContext = createContext()
 
 export function CartContextProvider(props) {
-  const [cart, setCart] = useState()
+  const [cart, setCart] = useState([])
   const [viewItems, setViewItems] = useState([])
 
   useEffect(() => {
@@ -36,19 +36,23 @@ export function CartContextProvider(props) {
   }
 
   function setCartItems(id) {
-    let newCart = cart
-    if (newCart) {
-      const index = newCart.findIndex((p) => p.id === id)
-      if (index !== -1) {
-        newCart[index].quantity += 1
-      } else {
-        newCart = [...newCart, { id: id, quantity: 1 }]
+    setCart(prev => {
+      if(!prev || prev.length === 0){
+        return [{id: id, quantity: 1}]
       }
-    } else {
-      newCart = [{ id: id, quantity: 1 }]
-    }
 
-    setCart(newCart)
+      const newCart = [...prev]
+      const index = newCart.findIndex(p => p.id === id)
+
+      if(index !== -1){
+        newCart[index] = {...newCart[index], quantity: newCart[index].quantity + 1}
+      }
+      else {
+        newCart.push({id, quantity: 1})
+      }
+
+      return newCart
+    })
   }
 
   function increaseQty(id) {

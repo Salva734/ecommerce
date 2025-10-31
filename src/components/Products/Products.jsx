@@ -37,7 +37,7 @@ function Products() {
 
         {/*Right part that shows products */}
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full p-4 gap-6'>
-          <CardMap category={partsFilter} brand={brandsFilter} />
+          <CardMap category={partsFilter} brand={brandsFilter} discount={false} />
         </div>
       </div>
     </div>
